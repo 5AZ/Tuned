@@ -44,6 +44,15 @@ useful to you too, I'd genuinely like to hear about it, and where it falls over.
 Not public yet. I want to put it through a few more paces first, it'll follow once it's
 earned that.
 
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for what's changed between versions.
+
+## Licence
+
+Free to use and share the unmodified build; see [LICENCE.txt](LICENCE.txt). The
+source isn't public yet.
+
 ## Third-party notices
 
 Tuned links against the following open-source packages, unmodified, via NuGet:

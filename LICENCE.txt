@@ -1,0 +1,23 @@
+Tuned — Licence
+All rights reserved.
+
+Tuned is free to use. You may download, run, and share the unmodified release
+binary (Tuned.exe and the files that ship alongside it) with anyone, at no
+charge.
+
+Please don't:
+
+  - sell it, or charge for access to it;
+  - pass it off as your own work.
+
+The source code isn't public at the moment. That may change in future; until
+then, all rights in the source are reserved.
+
+This is a personal project, shared in the hope it's useful. It comes with no
+warranty of any kind — it's provided "as is". I can't promise it won't misread
+a sensor, use resources you'd rather it didn't, or fall over on your hardware,
+so use it at your own risk. To the fullest extent permitted by law, the author
+accepts no liability for any damage or loss arising from its use.
+
+Tuned bundles third-party open-source components, unmodified, under their own
+licences; see THIRD-PARTY-NOTICES.txt for those.
