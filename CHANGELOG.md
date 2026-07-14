@@ -2,6 +2,12 @@
 
 Notable changes to Tuned, newest first.
 
+## v0.3.1 — 2026-07-14
+
+- Feat: the status footer (live dot, sensor count, database size, elevation and the autostart toggle) now sits beneath both tabs instead of only the first view, so it stays put when switching between them.
+- Feat: the version badge links to the project on GitHub.
+- Change: renamed the tabs from Now / History to **Live / Activity**; Live remains the default view.
+
 ## v0.3.0 — 2026-07-12
 
 - Feat: thermal-aware tray icon — the pulse glyph shifts amber → yellow → red as the hottest of CPU, GPU or disk crosses 60 °C and 80 °C, so a hot system reads from the tray without opening the window.

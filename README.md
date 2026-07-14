@@ -16,14 +16,20 @@ It's scoped to what I actually look at day to day, anything new earns its place 
 those two questions faster to answer, it's not there to fill out another chart. If it's
 useful to you too, I'd genuinely like to hear about it, and where it falls over.
 
+## Download
+
+**[Download Tuned for Windows 11 (x64)](https://github.com/5AZ/Tuned/releases/latest/download/Tuned.exe)** — one portable `.exe`, no installer. This link always points at the newest release.
+
+Prefer the full package, with licence and third-party notices bundled? Grab the **[latest release zip](https://github.com/5AZ/Tuned/releases/latest)** instead.
+
 ## What it shows
 
 | View | Contents |
 |---|---|
-| **Now** | Hero tiles (CPU load + temp + power, GPU load + temp, RAM, disk temp, fan), per-core heat grid, 90-second sparklines, live top-5 processes |
-| **History** | Afterburner-style stacked lanes over 15m to 7d with min/max bands, a synced crosshair readout, and "top offenders" for the selected range |
+| **Live** | Hero tiles (CPU load + temp + power, GPU load + temp, RAM, disk temp, fan), per-core heat grid, 90-second sparklines, live top-5 processes |
+| **Activity** | Afterburner-style stacked lanes over 15m to 7d with min/max bands, a synced crosshair readout, and "top offenders" for the selected range |
 
-![History view: synced CPU/GPU/RAM/disk/fan lanes with a top offenders panel](docs/screenshots/history-view.png)
+![Activity view: synced CPU/GPU/RAM/disk/fan lanes with a top offenders panel](docs/screenshots/history-view.png)
 
 ## Getting it running
 
