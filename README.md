@@ -26,8 +26,8 @@ Prefer the full package, with licence and third-party notices bundled? Grab the 
 
 | View | Contents |
 |---|---|
-| **Live** | Hero tiles (CPU load + temp + power, GPU load + temp, RAM, disk temp, fan), per-core heat grid, 90-second sparklines, live top-5 processes |
-| **Activity** | Afterburner-style stacked lanes over 15m to 7d with min/max bands, a synced crosshair readout, and "top offenders" for the selected range |
+| **Live** | Hero tiles (CPU load + temp + power, GPU load + temp, RAM, disk, fan; click the disk or fan tile to choose which drive or fan it shows), per-core heat grid, 90-second sparklines, live top-5 processes |
+| **Activity** | Afterburner-style stacked lanes over 15m to 7d with min/max bands, a synced crosshair readout, and "top offenders" for the selected range. Time when Tuned wasn't running shows as a dashed link, not a made-up line |
 
 ![Activity view: synced CPU/GPU/RAM/disk/fan lanes with a top offenders panel](docs/screenshots/history-view.png)
 
@@ -44,6 +44,36 @@ Prefer the full package, with licence and third-party notices bundled? Grab the 
    driver rather than its predecessor, which Windows 11 now blocks outright.
 6. Flip **autostart** in the footer strip once you're happy with it, don't forget that bit,
    it's what turns this into set-and-forget rather than something you relaunch by hand.
+
+## A note on Windows Defender and disk sensors
+
+While testing a build I noticed Windows Security popping a "protected memory
+access" warning at Tuned, which had never asked for anything of the sort. I went
+digging through the Defender event log and some throwaway test builds, and narrowed
+it down: Defender's Controlled Folder Access flags any app that opens a physical
+drive with write access, because that is what ransomware does before it encrypts a
+disk. Every hardware monitor opens drives that way to read SMART health data
+(HWiNFO, CrystalDiskInfo and friends all trip the same wire), and the "memory"
+wording is just Defender being vague. Nothing is being written to anything.
+
+Rather than leave you to work that out yourself, Tuned now checks up front. If
+Controlled Folder Access would flag it, it switches to read-only disk access
+automatically: no warning, and you still get drive activity for everything plus
+temperatures for NVMe drives. The one thing read-only access cannot reach is the
+temperature of old-style SATA/spinning drives, since Windows only hands that out on
+the kind of handle Defender blocks.
+
+So the choice is yours, and the footer will tell you which mode you are in:
+
+- Do nothing: everything works except SATA drive temperatures, and Defender stays
+  quiet.
+- Want SATA temperatures too: allow Tuned through Controlled Folder Access
+  (Windows Security > Virus & threat protection > Ransomware protection > Allow an
+  app through Controlled folder access). One entry, done; updates at the same
+  path stay covered.
+
+If you don't use Controlled Folder Access (it is off by default on many machines),
+none of this applies and Tuned behaves as it always did.
 
 ## Source
 
